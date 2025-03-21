@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+           /* Butterfly Background Effect */
+           .butterfly {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #ff6f61, #ffcc00, #00ccff, #ff00ff);
+            border-radius: 50%;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .butterfly {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #ff6f61, #ffcc00, #00ccff, #ff00ff);
+            border-radius: 50%;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+        .welcome-container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .welcome-container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        
+         .welcome-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>                                               
+</head>
+<body>
+      <!-- Welcome Container -->
+      <div class="welcome-container">
+        <!-- Instagram Text -->
+        <div class="instagram-text">👑⃟≛⃝ℑ𝔫𝔰𝔱𝔞𝔤𝔯𝔞𝔪 🕊️⃟⋆≛⃝</div>
+
+        
+        
+
+        <!-- Instagram Logo -->
+        <div class="instagram-logo">
+            <img src="https://cdn.pixabay.com/animation/2022/10/30/18/26/18-26-48-450_512.gif" alt="Instagram Logo">
+        </div>
+
+        <!-- Enter Button -->
+        <button class="enter-button" onclick="navigateToMainPage()">✨ 𝕲𝖊𝖙  𝖘𝖙𝖆𝖗𝖙𝖊𝖉 ✨</button>
+    </div>
+    <script>
+
+
+        function navigateToMainPage() {
+            window.location.href = "main.html"; // Redirect to your existing page
+        }
+    </script>
+</body>
+</html>

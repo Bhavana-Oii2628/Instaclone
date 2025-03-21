@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>꧁༺✿𝐼𝓃𝓈𝓉𝒶 𝒻𝒶𝓂𝒾𝓁𝓎✿༻꧂</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: rgb(255, 255, 255); /* Default white background */
+        }
+
+        .post {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255); /* Post background */
+        }
+
+        .post img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .post-actions {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .post-actions button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: transparent;
+            color: black; /* Default black text */
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .post-actions button:hover {
+            color: #555; /* Dark gray on hover */
+        }
+        
+
+        .comment-container {
+           display: flex;
+           flex-direction: column; /* Stack button & text box vertically */
+           align-items: flex-start; /* Align text box below button */
+           position: relative;
+        }
+
+        .comment-box {
+            display: none;
+            margin-top: 5px; /* Space between button & text box */
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            background: #fff;
+        }
+
+
+
+        #sharePopup {
+            margin-top: 20px;
+            display: none; /* Initially hidden */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: transparent;
+            color: #0095f6; /* Default blue color */
+        }
+      
+
+
+
+    </style>
+
+   
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <h1></h1>
+            
+            <div id="profile">
+                <img src="https://img.freepik.com/premium-vector/instagram-logo_628407-1909.jpg" alt="Profile" id="">
+            </div> 
+
+            <div id="profile">
+                <img src="https://img.freepik.com/premium-vector/live-user-video-streaming-new-story-social-media-badges-online-avatar-stories_578506-375.jpg" alt="Profile" id="">
+            </div> 
+            
+            <div class="sub-section" id="clicked">
+                <i class="fa-solid fa-house icon " ></i>
+                <a href="#">Dark-mode🌓</a>
+            </div>
+            <div class="sub-section" >
+                <i class="fa-solid fa-magnifying-glass  icon"></i>
+                <a href="#">Search🔍</a>
+            </div>
+            <div class="sub-section" >
+                <i class="fa-regular fa-compass icon"></i>
+                <a href="#">Explore🤍</a>
+            </div>
+            <div class="sub-section">
+                <i class="fa-solid fa-clapperboard  icon"></i>
+                <a href="#">Reels📸</a>
+            </div>
+            <div class="sub-section">
+                <i class="fa-regular fa-message  icon"></i>
+                <a href="#">Messages💬</a>
+            </div>
+            <div class="sub-section" id="hidden2">
+                <i class="fa-regular fa-heart  icon"></i>
+                <a href="#">Notification🔔</a>
+            </div>
+            <div class="sub-section" id="hidden1">
+                <i class="fa-solid fa-square-plus  icon0"></i>
+                <a href="#">Create✨</a>
+            </div>
+        </div>
+        <div id="search-bar">
+            <input type="text" placeholder="Search🔍" id="search🔍">
+        </div>
+    </header>
+
+    <main>
+        <div class="post">
+            <div class="post-header">
+                <img src="user1.jpg" alt="" class="user-img">
+                <h2 class="username">--mrs.bk--</h2>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Q2iV4J1VzLfCDXby9LXoKM6AoqEhdv49izWc7DWMRZOiv9v3JZlj9-VEvi1HNx-_eX4&usqp=CAU" alt="" class="post-image">
+            <div class="post-actions">
+                
+                <button id="likeBtn">Like</button>
+
+               
+                <div style="position: relative; display: inline-block;">
+                    <button id="commentBtn">Comment</button>
+                    <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                        <input type="text" placeholder="Add a comment..." />
+                    </div>
+                </div>   
+                
+            
+            
+
+                <button id="shareBtn">Share</button>
+            </div>
+        </div>
+    
+    
+
+        
+        
+        <main>
+        <div class="post">
+            <div class="post-header">
+                <img src="user1.jpg" alt="" class="user-img">
+                <h2 class="username">--itz-vaishumah--</h2>
+            </div>
+            <img src="https://i.pinimg.com/236x/f8/d4/fa/f8d4faec69a27a285eb37b546d7099de.jpg" alt="" class="post-image">
+            <div class="post-actions">
+
+
+                <button id="likeBtn">Like</button>
+
+
+                <div style="position: relative; display: inline-block;">
+                    <button id="commentBtn">Comment</button>
+                    <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                        <input type="text" placeholder="Add a comment..." />
+                    </div>
+                </div>   
+                
+            
+            
+
+                <button id="shareBtn">Share</button>
+            </div>
+        </div>
+
+
+
+       
+
+        <div class="post">
+            <div class="post-header">
+                <img src="user1.jpg" alt="" class="user-img">
+                <h2 class="username">-aishu-2007-</h2>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7zSxjbc8bKTXkbAu0H0iNS1-9-rELiEYmtC2sTat3bSvbcIUEwjclOLarMgWIC1a3RQE&usqp=CAU" alt="" class="post-image">
+            <div class="post-actions">
+                
+
+                
+                <button id="likeBtn">Like</button>
+
+
+                <div style="position: relative; display: inline-block;">
+                    <button id="commentBtn">Comment</button>
+                    <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                        <input type="text" placeholder="Add a comment..." />
+                    </div>
+                </div>   
+                
+            
+            
+
+                <button id="shareBtn">Share</button>
+            </div>
+        </div>
+
+
+        <div class="post">
+            <div class="post-header">
+                <img src="user1.jpg" alt="" class="user-img">
+                <h2 class="username">itz-king-official</h2>
+            </div>
+            <img src="https://i.pinimg.com/736x/ed/a5/86/eda586941945752b38d4b40473d0fb82.jpg" alt="" class="post-image">
+            <div class="post-actions">
+                
+                <button id="likeBtn">Like</button>
+
+
+                <div style="position: relative; display: inline-block;">
+                    <button id="commentBtn">Comment</button>
+                    <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                        <input type="text" placeholder="Add a comment..." />
+                    </div>
+                </div>   
+                
+            
+            
+
+                <button id="shareBtn">Share</button>
+            </div>
+        </div>
+
+
+        <div class="post">
+            <div class="post-header">
+                <img src="user1.jpg" alt="" class="user-img">
+                <h2 class="username">itz-queen-official</h2>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDBukisXVaWDr2Rc7CG-dXySafbS4OGqC8kQ&s" alt="" class="post-image">
+            <div class="post-actions">
+                
+                <button id="likeBtn">Like</button>
+
+
+                <div style="position: relative; display: inline-block;">
+                    <button id="commentBtn">Comment</button>
+                    <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                        <input type="text" placeholder="Add a comment..." />
+                    </div>
+                </div>   
+                
+            
+            
+
+                <button id="shareBtn">Share</button>
+            </div>
+        </div>
+
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">_SoufulVibes</h2>
+        </div>
+        <img src="https://www.shutterstock.com/image-illustration/this-adorable-cartoon-depiction-features-600nw-2308962209.jpg" alt="" class="post-image">
+        <div class="post-actions">
+           
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+      
+
+        <div class="post">
+            <div class="post-header">
+                <img src="user1.jpg" alt="" class="user-img">
+                <h2 class="username">--itzz-me-tom-006</h2>
+            </div>
+            <img src="https://i.pinimg.com/736x/8a/88/15/8a8815e01238a9db1a7f5c3fcb77e803.jpg";  alt="" class="post-image">
+            <div class="post-actions">
+               
+                <button id="likeBtn">Like</button>
+
+
+                <div style="position: relative; display: inline-block;">
+                    <button id="commentBtn">Comment</button>
+                    <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                        <input type="text" placeholder="Add a comment..." />
+                    </div>
+                </div>   
+                
+            
+            
+
+                <button id="shareBtn">Share</button>
+            </div>
+        </div>
+
+
+        <div class="post">
+            <div class="post-header">
+                <img src="user1.jpg" alt="" class="user-img">
+                <h2 class="username">--itzz-me-jerry-006</h2>
+            </div>
+            <img src="https://i.pinimg.com/736x/25/31/59/253159d206adaec85de71cd786e420ed.jpg" alt="" class="post-image">
+            <div class="post-actions">
+               
+                <button id="likeBtn">Like</button>
+
+
+                <div style="position: relative; display: inline-block;">
+                    <button id="commentBtn">Comment</button>
+                    <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                        <input type="text" placeholder="Add a comment..." />
+                    </div>
+                </div>   
+                
+            
+            
+
+                <button id="shareBtn">Share</button>
+            </div>
+        </div>
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">Kaadhal_explorer</h2>
+        </div>
+        <img src="https://i.pinimg.com/736x/02/59/b9/0259b984e9d9f0e70a4141e0a5823862.jpg" alt="" class="post-image">
+        <div class="post-actions">
+            
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">Dreamy_Diaries</h2>
+        </div>
+        <img src="https://i.pinimg.com/736x/4b/d5/75/4bd5752ef4bd2c74d7debfd15c24f360.jpg" alt="" class="post-image">
+        <div class="post-actions">
+            
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+>
+  
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">pure_vibes_22</h2>
+        </div>
+        <img src="https://www.shutterstock.com/image-illustration/young-woman-headphones-meditatingcalm-peaceful-260nw-2322735189.jpg" alt="" class="post-image">
+        <div class="post-actions">
+            
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="usernam">love_Chaser_23</h2>
+        </div>
+        <img src="https://img.freepik.com/premium-photo/girl-with-mobile-phone-goro-style_1003686-46422.jpg?w=996" alt="" class="post-image">
+        <div class="post-actions">
+           
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">Simply_heartfelt</h2>
+        </div>
+        <img src="https://media.istockphoto.com/id/636379014/photo/hands-forming-a-heart-shape-with-sunset-silhouette.jpg?s=612x612&w=0&k=20&c=CgjWWGEasjgwia2VT7ufXa10azba2HXmUDe96wZG8F0=" alt="" class="post-image">
+        </div>
+        <button id="likeBtn">Like</button>
+
+
+        <div style="position: relative; display: inline-block;">
+            <button id="commentBtn">Comment</button>
+            <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                <input type="text" placeholder="Add a comment..." />
+            </div>
+        </div>   
+        
+    
+    
+
+        <button id="shareBtn">Share</button>
+    </div>
+</div>
+
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">Endless_dreamer</h2>
+        </div>
+        <img src="https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="post-image">
+        <div class="post-actions">
+           
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">Silent_Waves</h2>
+        </div>
+        <img src="https://i.pinimg.com/736x/28/77/33/287733e2eaf63c2b4c6babb3139c6bfa.jpg" alt="" class="post-image">
+        <div class="post-actions">
+           
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">Bssiful_heart</h2>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhdbqgjEUzdFtuRNLaL2TTxg_Eu6gO1LLhfA_EfsVcS1-_d5AxrOzmoaTtv7J7yh7KHbA&usqp=CAU" alt="" class="post-image">
+        <div class="post-actions">
+          
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">Mystic_moments</h2>
+        </div>
+        <img src="https://images.pexels.com/photos/1545590/pexels-photo-1545590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="post-image">
+        <div class="post-actions">
+         
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">Echoes_of_Grace</h2>
+        </div>
+        <img src="https://images.unsplash.com/photo-1545828751-0a3b3a1da949?q=80&w=974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="post-image">
+        <div class="post-actions">
+           
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">Silent_Skies</h2>
+        </div>
+        <img src="https://media.istockphoto.com/id/541836000/photo/young-girl-is-watching-sunset-over-tokyo.webp?s=612x612&w=is&k=20&c=MaEsNtAeJiJ_5ClN3iYRxtIgM6PInIMu3hwpM_JLgFw=" alt="" class="post-image">
+        <div class="post-actions">
+           
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">moon_explorer</h2>
+        </div>
+        <img src="https://thumbs.dreamstime.com/z/girl-red-heart-sweet-child-happy-little-gift-box-background-moon-wedding-valentine-celebration-concept-65466887.jpg?w=768" alt="" class="post-image">
+        <div class="post-actions">
+           
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">king.ak</h2>
+        </div>
+        <img src="https://wallpapercave.com/wp/wp11393897.jpg" alt="" class="post-image">
+        <div class="post-actions">
+            
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">queen.ak</h2>
+        </div>
+        <img src="https://image.tensorartassets.com/posts/images/612967536505589636/3436f77b-5acc-4ad8-98ba-f0db912a5b37.jpg" alt="" class="post-image">
+        <div class="post-actions">
+           
+            <button id="likeBtn">Like</button>
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">kaviya7</h2>
+        </div>
+        <img src="https://mastdp.com/images/alonegirl/2024/07/alone-dp-for-girls-10.webp" alt="" class="post-image">
+
+        <div class="post-actions">
+           
+            <button id="likeBtn">Like</button>
+
+
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            
+        
+        
+
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+        <div class="post-header">
+            <img src="user1.jpg" alt="" class="user-img">
+            <h2 class="username">itz_ammu_official</h2>
+        </div>
+        <img src="https://i.pinimg.com/236x/8f/b7/84/8fb784746c1e62ea615f042b8f5d52d8.jpg" alt="" class="post-image">
+        <div class="post-actions">
+           
+            <button id="likeBtn">Like</button>
+            <div style="position: relative; display: inline-block;">
+                <button id="commentBtn">Comment</button>
+                <div id="commentBox" style="display: none; position: absolute; top: 100%; left: 0; width: 200px; padding: 5px; border: 1px solid #ccc; background: #fff;">
+                    <input type="text" placeholder="Add a comment..." />
+                </div>
+            </div>   
+            <button id="shareBtn">Share</button>
+        </div>
+    </div>
+
+
+
+
+
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type a message" />
+            <button id="share-btn">Share</button>
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+   
+
+
+
+
+
+    <script src="script.js"></script> <!-- External JS -->
+</body>
+</html>
+
+
